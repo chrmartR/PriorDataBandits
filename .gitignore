@@ -1,0 +1,8 @@
+#ignore my personal files
+/plots
+/notes
+/code/__pycache__
+/plots/
+.ipynb_checkpoints/*
+.DS_Store
+/StoredData
