@@ -47,7 +47,7 @@ class GPRegression:
         cov : 2-D numpy array, optional
             Array reprensenting predictive covariance, returned only if return_cov is True.
         '''
-        Kinv = np.linalg.pinv(self.kernel(self.X_train, self.X_train) + (1.0/self.beta)*np.identity(len(self.X_train)))
+        Kinv = np.linalg.pinv(self.kernel(self.X_train, self.X_train) + (1.0/self.beta) * np.identity(len(self.X_train)))
         k = self.kernel(self.X_train, X_test)
         c = self.kernel(X_test,X_test)
         mean = k.T @ Kinv @ self.t_train

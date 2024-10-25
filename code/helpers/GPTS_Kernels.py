@@ -115,6 +115,4 @@ class RBFKernel:
         norms_X = (X ** 2).sum(axis=1)
         norms_Y = (Y ** 2).sum(axis=1)
         tmp = norms_X.reshape(-1, 1) + norms_Y - 2 * np.dot(X, Y.T)
-        K = np.exp(-self.gamma*tmp)
-
-        return K
+        return np.exp(-self.gamma*tmp)
