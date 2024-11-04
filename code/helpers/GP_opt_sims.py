@@ -51,7 +51,7 @@ def FS(T, func, prior_X, prior_y, kern, beta, sub_D = 100, show_plot = False):
     K = kern(X, X) + (1.0/beta)*np.identity(len(X))
     K_inv = np.linalg.pinv(K)
 
-    for i in tqdm(range(start, T), leave = False):
+    for i in range(start, T):
         #compute predictive mean and cov for randomized sample points
         D_t = np.random.uniform(func.x_min, func.x_max, (sub_D, 1))
         k = kern(X, D_t)
